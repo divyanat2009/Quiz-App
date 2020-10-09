@@ -1,1 +1,52 @@
-ECHO is on.
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Quiz App</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"
+    type="text/css" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<main>  
+<div class="container">
+    <!--Header-->  
+  
+      <h1>Balanced Diet Quiz</h1>
+      <p>Think you know everything about balanced diet? Take the quiz to find out!</p>
+      <button id ="startQuiz">Start Quiz</button>
+  
+    <form id ="quiz-questions">
+        <p>Question 1?</p>
+        <ol>
+        <li><label for="answerA"></label>
+        <input id="answerA" type ="text" name = "answer" placeholder="Answer A."></li>
+        <li><label for="answerB"></label>
+        <input id="answerB" type ="text" name = "answer" placeholder="Answer B."></li>
+        <li><label for="answerC"></label>
+        <input id="answerC" type ="text" name = "answer" placeholder="Answer C."></li> 
+        <li><label for="answerD"></label>
+        <input id="answerD" type ="text" name = "answer" placeholder="Answer D."></li>   
+        </ol>
+        <input type="Submit">
+    </form>
+
+    <h2>Sorry, that was incorrect. The correct answer is C.</h2>
+    <button id="nextQuestion">Next Question</button>
+
+    <!--Score-->
+    <h2>Congratulations! You finished the quiz!</h2>
+    <p>You scored 10/10.</p>
+    <button id ="restartQuiz">Restart Quiz</button>
+   </div> 
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.js" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+  <script src="questions.js"></script>
+</main>  
+</body>
+</html> 
