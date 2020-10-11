@@ -1,74 +1,55 @@
-const quiz ={ 
-    
-questions:[
+let questions = [
 {
     question:'What is anorexia caused by?',
-    options:[
-        'Not enough energy intake',
-        'Too much fat',
-        'Not enough protein',
-        'Not enough exercise'],
-    correctAnswer: 0
+    choice1: 'Not enough energy intake',
+    choice2: 'Too much fat',
+    choice3: 'Not enough protein',
+    choice4: 'Not enough exercise',
+    correctAnswer: 1
 },
 {
     question:'A deficiency of iron in the diet could lead to what?',
-    options:[
-        'Scurvy',
-        'Pellagra',
-        'Anaemia',
-        'Skin problems'],
-    correctAnswer: 2 
+    choice1: 'Scurvy',
+    choice2: 'Pellagra',
+    choice3: 'Anaemia',
+    choice4: 'Skin problems',
+    correctAnswer: 3
 },
 {
     question:'Which one has the highest energy content?',
-    options:[
-        'Protein',
-        'Fat',
-        'Sugar',
-        'Starch'],
-    correctAnswer: 1
+    choice1: 'Protein',
+    choice2: 'Fat',
+    choice3: 'Sugar',
+    choice4: 'Starch',
+    correctAnswer: 2
 },
 {
     question:'Which of the following increases your metabolic rate?',
-    options:[
-        'Eating',
-        'Excercise',
-        'Sleeping',
-        'Being Overweight'],
-    correctAnswer: 1 
+    choice1: 'Eating',
+    choice2: 'Excercise',
+    choice3: 'Sleeping',
+    choice4: 'Being Overweight',
+    correctAnswer: 2
 },
 {
     question:'A diet which is low in fibre could lead to which disorder?',
-    options:[
-        'Heart Disease',
-        'Bowel Cancer',
-        'Diabetes',
-        'Cystic Fibrosis'],
-    correctAnswer: 1
+    choice1: 'Heart Disease',
+    choice2: 'Bowel Cancer',
+    choice3: 'Diabetes',
+    choice4: 'Cystic Fibrosis',
+    correctAnswer: 2
 },
 {
     question:'A balanced diet must have carbohydrates, proteins, fat, fibre, vitamins and which other type of food?',
-    options:[
-        'Fatty Acids',
-        'Cholestrol',
-        'Water',
-        'Minerals'],
-    correctAnswer: 3
+    choice1: 'Fatty Acids',
+    choice2: 'Cholestrol',
+    choice3: 'Water',
+    choice4: 'Minerals',
+    correctAnswer: 4
 }    
 ]
-};
 
-let currentQuestion= 0;
-let correctAnswer= 0;
-let quizOver=false;
-let availableQuestions=[];
 
-function startQuiz(){
-    $('.js-form-choices').submit(function(event){
-        event.preventDefault();
-    })    
-     $('.startQuiz').click(function(){
-           
-    })
-}
+
+
 
