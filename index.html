@@ -15,12 +15,52 @@
 <main>  
 <div class="container">
     <!--Header-->  
+    <header class="headline">
   
-      <h1>Balanced Diet Quiz</h1>
-      <p>Think you know everything about balanced diet? Take the quiz to find out!</p>
-      <button id ="startQuiz">Start Quiz</button>
+    <h1>Balanced Diet Quiz</h1>
+      <p>Think you know everything about a balanced diet? Take the quiz to find out!</p>
+      <button id ="startQuiz">Start Quiz>></button>
+  </header>  
+
+  <div id="hud">
+    <div id="hud-item">
+      <p id="progressText" class="hud-prefix">
+        Question
+      </p>
+    <div id="progressBar">
+      <div id="progreesBarFull"></div>
+    </div>   
+    </div>
+    <div id="hud-item">
+      <p class="hud-prefix">
+        Score
+      </p>
+      <h1 class="hud-main-text">0</h1>
+    </div>
+  </div>
+  <div class="quiz-container">    
+      <form class="questionForm">
+      <h2 id="question"></h2>
+      <ul class="choice-container">
+        <li><label class="choice-prefix">A.</label>
+        <input type ="text" class="choice-text" data-number="1"></li>
+        <li><label class="choice-prefix">B.</label>
+        <input type ="text" name = "answer" class="choice-text" data-number="2"></li>
+        <li><label class="choice-prefix">C.</label>
+        <input type ="text" class="choice-text" data-number="3"></li> 
+        <li><label class="choice-prefix">D.</label>
+        <input type ="text" class="choice-text" data-number="4"></li>
+        <button class="next">Next Question>></button>
+      </ul>
+      </form>      
+  </div>
+  <div class="result-container">
+    <p>Your quiz score is:</p>
+    <button class="restartQuiz">Restart Quiz>></button>
+  </div>
+    
   
-    <form id ="quiz-questions">
+   <!-- <form id ="quiz-questions">
         <p>Question 1?</p>
         <ol>
         <li><label for="answerA"></label>
@@ -36,13 +76,14 @@
     </form>
 
     <h2>Sorry, that was incorrect. The correct answer is C.</h2>
-    <button id="nextQuestion">Next Question</button>
+    <button id="nextQuestion">Next Question</button> 
 
-    <!--Score-->
+    
     <h2>Congratulations! You finished the quiz!</h2>
     <p>You scored 10/10.</p>
     <button id ="restartQuiz">Restart Quiz</button>
-   </div> 
+   </div>  -->
+
   
   <script src="https://code.jquery.com/jquery-3.4.1.slim.js" crossorigin="anonymous"></script>
   <script src="index.js"></script>

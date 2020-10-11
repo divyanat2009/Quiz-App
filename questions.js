@@ -3,59 +3,72 @@ const quiz ={
 questions:[
 {
     question:'What is anorexia caused by?',
-    answers:[
+    options:[
         'Not enough energy intake',
         'Too much fat',
         'Not enough protein',
         'Not enough exercise'],
-    correctAnswer: 'Not enough energy intake' 
+    correctAnswer: 0
 },
 {
     question:'A deficiency of iron in the diet could lead to what?',
-    answers:[
+    options:[
         'Scurvy',
         'Pellagra',
         'Anaemia',
         'Skin problems'],
-    correctAnswer: 'Anaemia' 
+    correctAnswer: 2 
 },
 {
     question:'Which one has the highest energy content?',
-    answers:[
+    options:[
         'Protein',
         'Fat',
         'Sugar',
         'Starch'],
-    correctAnswer: 'Fat' 
+    correctAnswer: 1
 },
 {
-    question:'A deficiency of iron in the diet could lead to what?',
-    answers:[
-        'Scurvy',
-        'Pellagra',
-        'Anaemia',
-        'Skin problems'],
-    correctAnswer: 'Anaemia' 
+    question:'Which of the following increases your metabolic rate?',
+    options:[
+        'Eating',
+        'Excercise',
+        'Sleeping',
+        'Being Overweight'],
+    correctAnswer: 1 
 },
 {
     question:'A diet which is low in fibre could lead to which disorder?',
-    answers:[
+    options:[
         'Heart Disease',
         'Bowel Cancer',
         'Diabetes',
         'Cystic Fibrosis'],
-    correctAnswer: 'Bowel Cancer' 
+    correctAnswer: 1
 },
 {
     question:'A balanced diet must have carbohydrates, proteins, fat, fibre, vitamins and which other type of food?',
-    answers:[
+    options:[
         'Fatty Acids',
         'Cholestrol',
         'Water',
         'Minerals'],
-    correctAnswer: 'Minerals' 
+    correctAnswer: 3
 }    
-],
-questionNumber: 0,
-Score: 0
+]
 };
+
+let currentQuestion= 0;
+let correctAnswer= 0;
+let quizOver=false;
+let availableQuestions=[];
+
+function startQuiz(){
+    $('.js-form-choices').submit(function(event){
+        event.preventDefault();
+    })    
+     $('.startQuiz').click(function(){
+           
+    })
+}
+
