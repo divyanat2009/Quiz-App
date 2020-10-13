@@ -62,7 +62,7 @@ button[disabled]:hover{
     float:right;
 }
 /*Forms*/
-.choice-container{
+/*.choice-container{
     list-style-type: none;    
 }
 form{
@@ -85,7 +85,7 @@ input {
     padding:10px;
     background-color: whitesmoke;
 }
-
+*/
 /*HUD*/
 #hud{
     display: flex;

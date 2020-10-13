@@ -1,11 +1,12 @@
-let questions = [
+questions = [
 {
     question:'What is anorexia caused by?',
-    choice1: 'Not enough energy intake',
-    choice2: 'Too much fat',
-    choice3: 'Not enough protein',
-    choice4: 'Not enough exercise',
-    correctAnswer: 1
+    answers: [
+    'Not enough energy intake',
+    'Too much fat',
+    'Not enough protein',
+    'Not enough exercise'],
+    correctAnswer: 0
 },
 {
     question:'A deficiency of iron in the diet could lead to what?',
