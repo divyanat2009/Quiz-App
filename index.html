@@ -21,7 +21,7 @@
   </header>  
 </div>  
 <!--Heads Up Display-->
-  <div id="hud">
+  <div id="hud" hidden>
     <div id="hud-item">
       <p id="progressText" class="hud-prefix">
         Question
@@ -39,7 +39,7 @@
     </div>
   </div>
  <!--Form--> 
-  <div class="quiz-container">    
+  <div class="quiz-container" hidden>    
       <form class="questionForm">
       <h2 id="question"></h2>
       <ul class="choice-container">
@@ -57,7 +57,7 @@
   </div>
 
   <!--Result-->
-  <div class="result-container">
+  <div class="result-container" hidden>
     <p>Your quiz score is:</p>
     <button class="restartQuiz">Restart Quiz>></button>
   </div>  

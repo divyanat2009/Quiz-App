@@ -54,19 +54,9 @@ let questions = [
       correctAnswer: 4
   }   
   ]
-const question = document.getElementById("question");
-const choices = Array.from(document.getElementsByClassName("choices-text"));
-const questionCounterText = document.getElementById("questionCounter");
-const scoreText = document.getElementById("score");
-let currentQuestion= {};
+//Assign Variables
 let score = 0;
-let questionCounter = 0;
-let availableQuestions = [];
-let maxQuestions= 0;
-//Constant
-//let correctAnsPoints = 10;
-console.log(questions);
-
+let questionCounter=0;
 
 //Start the quiz
 function startQuiz(){
@@ -74,36 +64,30 @@ function startQuiz(){
   renderNextQuestionAndAnswers();
 
 }
-
-/*function submitQuestionForm(){
-    //Prevent form submission
-    $('.questionForm').submit(function(e){
-      e.preventDefault();  
-      resetValues();
-      availableQuestions = [...questions];
-      getNewQuestion();
-      });
-      
-}*/
-
+//Start by resetting score and question counter to 0
 function resetValues(){
   questionCounter = 0;
   score = 0;
-  maxQuestions= questions.length;
+}
+//Update the question counter
+function updateQuestionCount(counter){
+  $('.#progress-text').html("Question" + counter + "of" + questions.length)
 }
 
-function setQuestionCount(questionCounter){
-  questionCounterText.innerText = `${questionCounter} out of ${maxQuestions}`;
+function onOffComponents(on){
+  if(!on)
+  {
+    $('#hud').hide();
+    $('.quiz-container').hide();
+    $('.result-container').hide();
+  }
+  else
+  {
+    $('#hud').removeAttr('hidden');
+    $('.quiz-container').removeAttr('hidden');
+    $('.result-container').removeAttr('hidden');
+  }
 }
-
-// Get a new question each time
-/*function getNewQuestion(){    
-  questionCounter++;
-  setQuestionCount(questionCounter);
-  const questionNumber = Math.floor(Math.random()*availableQuestions.length);
-  currentQuestion = availableQuestions[questionNumber];
-  question.innerText = currentQuestion.question;
-}*/
  function renderQuestionsAndAnswers(question, answers){
    $('#question').html = question;
    answers.forEach(answer =>{
