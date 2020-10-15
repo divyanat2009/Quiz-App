@@ -5,22 +5,21 @@
     padding:0;
     color: #333;
     text-align: center;
-    padding:10px 20px 0 20px;
+    padding: 10px;
 }
 p{
     margin-bottom: 10px;
 }
 
 h1{
-    color: #66adeb;
+    color: rgb(11, 35, 247);
     margin-bottom: 10px;
     font-size: 25px;
     font-weight:700;
 }
 h2{
-    margin-bottom: 10px;
     font-size: 20px;
-    font-weight: 400;
+    color: rgb(11, 35, 247);
 }
 
 /*Utilities*/
@@ -28,58 +27,23 @@ button{
     font-size: 15px;
     padding: 5px;
     text-align: center;
-    border: 1.5px solid #56a5eb;
     border-radius: 10px;
     text-decoration: none;
-    color: #56a5eb;
-    background-color: whitesmoke;
+    color: white;
+    background-color: rgb(44, 7, 148);
 }
 button:hover{
     cursor: pointer;
-    box-shadow: 0 5px 10px 0 rgba(86, 185, 235, 0.5);
     transition: transform 150ms;
-    color: blue
+    color: rgb(209, 209, 230)
 }
 
-button[disabled]:hover{
-    cursor:not-allowed;
-    box-shadow: none;
-    transform: none;
-}
 .next{
     float:right;
 }
-button #start-quiz{
+button #startQuiz{
     margin-top: 20px;
 }
-.result-container{
-    margin-top: 40px;
-}
-/*Forms*/
-/*.choice-container{
-    list-style-type: none;    
-}
-form{
-    width:100%;
-    display: flex;
-    flex-direction: column;
-}
-input {
-    width: 50%;
-    padding: 10px;
-    font-size: 30px;
-    border: none;
-    box-shadow: 0 5px 18px 0 rgba(86, 185, 235, 0.5);
-  }
-.choice-prefix{
-    padding:20px;
-}
-.choice-text{
-    width:80%;
-    padding:10px;
-    background-color: whitesmoke;
-}
-*/
 li{
     list-style-type: none;
   }
@@ -88,19 +52,37 @@ li{
       flex-direction: column;
   }
 /*HUD*/
-#hud{
+#hud-container{
     display: flex;
-    justify-content: space-between;
-}
-.hud-prefix{
-    text-align: center;
+    flex-direction: row ;
+    justify-content: space-around;    
+    }
+.hud-p{
+    color: rgb(11, 35, 247);
     font-size: 20px;
     font-weight: bold;
-    color: rgb(11, 35, 247)
+}    
+    
+
+/*Groups & Items-Mobile First*/
+.group{
+    display: flex;
+    flex-direction: column;
+    }
+  .item{
+    flex:1;
 }
-.hud-main-text{
-    text-align: center;
-}
+ 
+  @media screen and (min-width:768px){
+    .group {
+      flex-direction:row;
+      width: 100%;
+      margin: 0px auto;
+      justify-content: center;
+      align-items: center;
+      }
+
+
 
 
 
