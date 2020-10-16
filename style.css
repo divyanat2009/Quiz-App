@@ -38,9 +38,6 @@ button:hover{
     color: rgb(209, 209, 230)
 }
 
-.next{
-    float:right;
-}
 button #startQuiz{
     margin-top: 20px;
 }
