@@ -76,7 +76,7 @@
       let correctOption = questions[questionCounter].answers[questions[questionCounter].correctAnswer]
       if (selectedAnswer===correctOption){
       $('#responseBox').text("Correct.").css("border", "2px solid green");
-      $('.next').removeAttr("hidden");
+      $('.next').show();
       score += 10;      
       $("#scoreText").text("Score: " +score);      
       }
@@ -118,6 +118,7 @@
     resetValues();
     updateQuestionCount(1);
     checkAnswers();
+    $(".next").hide();
    }
   $(init);
   
