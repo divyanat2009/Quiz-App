@@ -75,13 +75,13 @@
       else{
       let correctOption = questions[questionCounter].answers[questions[questionCounter].correctAnswer]
       if (selectedAnswer===correctOption){
-      $('.feedback').text("Correct.").css("border", "2px solid green");
+      $('#responseBox').text("Correct.").css("border", "2px solid green");
       $('.next').removeAttr("hidden");
       score += 10;      
       $("#scoreText").text("Score: " +score);      
       }
       if (selectedAnswer!==correctOption){
-        $('.feedback').text("Incorrect. The correct answer is :" +correctOption).css("border", "2px solid red");        
+        $('#responseBox').text("Incorrect. The correct answer is :" +correctOption).css("border", "2px solid red");        
       }  
     }    
     });
