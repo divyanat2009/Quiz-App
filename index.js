@@ -6,6 +6,7 @@
   function resetValues(){
     questionCounter = 0;
     score = 0;
+    $("#scoreText").text("Score: " +score);
   }
   
   function updateQuestionCount(counter)
@@ -68,10 +69,11 @@
     $("input[type='button']").click(function(){
       let selectedAnswer= $("input[name='answers']:checked").val();
       //console.log(selectedAnswer);
-      if (selectedAnswer===questions[questionCounter].answers[questions[questionCounter].correctAnswer]);
-      $('.feedback').show("Correct.");
+      if (selectedAnswer===questions[questionCounter].answers[questions[questionCounter].correctAnswer]){
+      $('.feedback').text("Correct.");
       score += 10;
-      
+      $("#scoreText").text("Score: " +score);
+      }
     });
    }
   // when start button id clicked
