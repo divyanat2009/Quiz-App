@@ -47,11 +47,7 @@ button #startQuiz{
 li{
     list-style-type: none;
   }
-  .choice-container{
-      display: flex;
-      flex-direction: column;
-  }
-/*HUD*/
+  /*HUD*/
 #hud-container{
     display: flex;
     flex-direction: row ;

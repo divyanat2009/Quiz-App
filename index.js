@@ -1,4 +1,3 @@
-
   // Initialize Variables
   let score = 0;
   let questionCounter = 0;
@@ -35,11 +34,13 @@
   
    //render the question and respective answers each time
    function renderQuestionAndAnswers(question, answers){
+     $('.headline').hide();
+     $('.result-container').hide();
      $('#question').html(question);
      $('.choice-container').html("");
      answers.forEach(answer =>{
      $('.choice-container').append(
-     `<li><input type ="radio" class="choice-text"> ${answer}</li>`)
+     `<li><input type ="radio" value="${answer}" name="answers" class="choice-text"> ${answer}</li>`)
      });   
    }
   //render next question and answers
@@ -57,11 +58,20 @@
       {
         updateQuestionCount(questionCounter+1);
         renderQuestionAndAnswers(questions[questionCounter].question, questions[questionCounter].answers);
-        
       }
       
      });
-  
+     acceptingAnswers = true;  
+   }
+
+   function checkAnswers(){
+    answers.forEach(answer =>{
+     $(".submit").click(()=>{
+       
+      
+      });       
+
+     });
    }
   // when start button id clicked
    function startQuiz()
@@ -70,7 +80,7 @@
       OnOffComponents(true);
       resetValuesAndRenderQuestionsAndAnswers();
       renderNextQuestionAndAnswers();
-     
+      
     });
    }
   
@@ -93,6 +103,7 @@
     reStartQuiz();
     resetValues();
     updateQuestionCount(1);
+    checkAnswers();
    }
   $(init);
   
