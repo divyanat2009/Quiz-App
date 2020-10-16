@@ -37,6 +37,7 @@
    function renderQuestionAndAnswers(question, answers){
      $('.headline').hide();
      $('.result-container').hide();
+     $('.next').hide();
      $('#question').html(question);
      $('.choice-container').html("");
      answers.forEach(answer =>{
@@ -61,22 +62,26 @@
         renderQuestionAndAnswers(questions[questionCounter].question, questions[questionCounter].answers);
       }
       
-     });
-     acceptingAnswers = true;  
+     });      
    }
 
    function checkAnswers(){
     $("input[type='button']").click(function(){
       let selectedAnswer= $("input[name='answers']:checked").val();
       //console.log(selectedAnswer);
-      if (selectedAnswer===questions[questionCounter].answers[questions[questionCounter].correctAnswer]){
+      let correctOption = questions[questionCounter].answers[questions[questionCounter].correctAnswer]
+      if (selectedAnswer===correctOption){
       $('.feedback').text("Correct.");
       score += 10;
-      $("#scoreText").text("Score: " +score);
+      $("#scoreText").text("Score: " +score);      
       }
+      else if (selectedAnswer!==correctOption){
+        $('.feedback').text("Incorrect. The correct answer is: " + correctOption);        
+      }
+      
     });
-   }
-  // when start button id clicked
+  }
+  // Start Quiz
    function startQuiz()
    {
       $("#startQuiz").click(()=>{
