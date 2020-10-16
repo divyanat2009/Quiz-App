@@ -65,13 +65,11 @@
    }
 
    function checkAnswers(){
-    answers.forEach(answer =>{
-     $(".submit").click(()=>{
-       
+    $("input[type='button']").click(function(){
+      let selectedAnswer= $("input[name='answers']:checked").val();
+      console.log(selectedAnswer);
       
-      });       
-
-     });
+    });
    }
   // when start button id clicked
    function startQuiz()
