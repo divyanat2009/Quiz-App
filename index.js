@@ -69,6 +69,9 @@
     $("input[type='button']").click(function(){
       let selectedAnswer= $("input[name='answers']:checked").val();
       //console.log(selectedAnswer);
+      if (!selectedAnswer){
+        alert("Please select an option");
+      }
       let correctOption = questions[questionCounter].answers[questions[questionCounter].correctAnswer]
       if (selectedAnswer===correctOption){
       $('.feedback').text("Correct.");
@@ -77,8 +80,7 @@
       }
       else if (selectedAnswer!==correctOption){
         $('.feedback').text("Incorrect. The correct answer is: " + correctOption);        
-      }
-      
+      }      
     });
   }
   // Start Quiz
