@@ -23,7 +23,7 @@ h2{
 }
 
 /*Utilities*/
-button{
+button, #submit{
     font-size: 15px;
     padding: 5px;
     text-align: center;
@@ -44,6 +44,7 @@ button #startQuiz{
 li{
     list-style-type: none;
   }
+  
   /*HUD*/
 #hud-container{
     display: flex;

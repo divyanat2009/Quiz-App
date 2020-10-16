@@ -81,7 +81,7 @@
       $("#scoreText").text("Score: " +score);      
       }
       if (selectedAnswer!==correctOption){
-        $('.feedback').text("Incorrect. The correct answer is: " + correctOption).css("border", "2px solid red");        
+        $('.feedback').text("Incorrect. The correct answer is :" +correctOption).css("border", "2px solid red");        
       }  
     }    
     });
