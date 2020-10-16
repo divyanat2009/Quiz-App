@@ -67,7 +67,10 @@
    function checkAnswers(){
     $("input[type='button']").click(function(){
       let selectedAnswer= $("input[name='answers']:checked").val();
-      console.log(selectedAnswer);
+      //console.log(selectedAnswer);
+      if (selectedAnswer===questions[questionCounter].answers[questions[questionCounter].correctAnswer]);
+      $('.feedback').show("Correct.");
+      score += 10;
       
     });
    }
