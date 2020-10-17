@@ -54,6 +54,7 @@
       {
        alert("No more questions");
        resetValuesAndRenderQuestionsAndAnswers();
+
        init();
       }
       else
@@ -65,6 +66,7 @@
      });      
    }
 
+  //check answers  
   function checkAnswers(){
     $("input[type='button']").click(function(){
       let selectedAnswer= $("input[name='answers']:checked").val();
@@ -82,10 +84,10 @@
       }
       if (selectedAnswer!==correctOption){
         $('#responseBox').text("Incorrect. The correct answer is :" +correctOption).css("border", "2px solid red");
-        $('.next').fadeIn(2000);        
+        $('.next').fadeIn(2000);             
       }  
-      }    
-    });     
+      }        
+    });        
   }
 
   // Start Quiz

@@ -74,7 +74,6 @@ li{
     .group {
       flex-direction:row;
       width: 100%;
-      margin: 0px auto;
       justify-content: center;
       align-items: center;
       }
