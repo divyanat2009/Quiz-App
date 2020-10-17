@@ -44,7 +44,10 @@ button #startQuiz{
 li{
     list-style-type: none;
   }
-  
+
+.next{
+    padding:10px;
+}  
   /*HUD*/
 #hud-container{
     display: flex;

@@ -33,8 +33,8 @@
     }
    }
   
-   //render the question and respective answers each time
-   function renderQuestionAndAnswers(question, answers){
+  //render the question and respective answers each time
+  function renderQuestionAndAnswers(question, answers){
      $('.headline').hide();
      $('.result-container').hide();
      $('.next').hide();
@@ -46,7 +46,7 @@
      });   
    }
   //render next question and answers
-   function renderNextQuestionAndAnswers(){
+  function renderNextQuestionAndAnswers(){
       $('.questionForm').submit(function(e){
       e.preventDefault();    
       questionCounter++;
@@ -65,7 +65,7 @@
      });      
    }
 
-   function checkAnswers(){
+  function checkAnswers(){
     $("input[type='button']").click(function(){
       let selectedAnswer= $("input[name='answers']:checked").val();
       //console.log(selectedAnswer);
@@ -75,19 +75,21 @@
       else{
       let correctOption = questions[questionCounter].answers[questions[questionCounter].correctAnswer]
       if (selectedAnswer===correctOption){
-      $('#responseBox').text("Correct.").css("border", "2px solid green");
-      $('.next').show();
+      $('#responseBox').text("Correct.").css("border", "2px solid #00ff00");
+      $('.next').fadeIn(2000);
       score += 10;      
       $("#scoreText").text("Score: " +score);      
       }
       if (selectedAnswer!==correctOption){
-        $('#responseBox').text("Incorrect. The correct answer is :" +correctOption).css("border", "2px solid red");        
+        $('#responseBox').text("Incorrect. The correct answer is :" +correctOption).css("border", "2px solid red");
+        $('.next').fadeIn(2000);        
       }  
-    }    
-    });
+      }    
+    });     
   }
+
   // Start Quiz
-   function startQuiz()
+  function startQuiz()
    {
       $("#startQuiz").click(()=>{
       OnOffComponents(true);
@@ -97,20 +99,20 @@
     });
    }
   
-   function reStartQuiz(){
+  function reStartQuiz(){
     $(".restartQuiz").click(()=>{
       resetValuesAndRenderQuestionsAndAnswers();
       init();
     });
    }
   
-   function resetValuesAndRenderQuestionsAndAnswers(){
+  function resetValuesAndRenderQuestionsAndAnswers(){
       resetValues();
       renderQuestionAndAnswers(questions[questionCounter].question, questions[questionCounter].answers);   
 
    }
   
-   //call all functions
+  //call all functions
    function init()
    {
     startQuiz();
@@ -119,7 +121,7 @@
     updateQuestionCount(1);
     checkAnswers();
     $(".next").hide();
-   }
+    }
   $(init);
   
   
