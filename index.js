@@ -1,18 +1,18 @@
   // Initialize Variables
   let score = 0;
   let questionCounter = 0;
-
+  
   //Reset question counter and score
   function resetValues()
   {
     questionCounter = 0;
     score = 0;
-    $("#scoreText").text("Score: " +score);
+    $("#scoreText").text("Score: " +score+"/"+ questions.length);
   }
   //Question Counter
   function updateQuestionCount(counter)
   {
-    $("#progressText").html("Question "+counter +" of " +questions.length);
+    $("#progressText").html("Question: "+counter +"/" +questions.length);
   }
   
   // Hide containers
@@ -58,7 +58,7 @@
       {
        alert("No more questions");
        $(".result-container").modal({ fadeDuration: 100 }); 
-       $(".result-container p").append(`${score}`);                 
+       $(".result-container p").append(`${score}/${questions.length}`);                 
        resetValuesAndRenderQuestionsAndAnswers();
        init();
       }
@@ -85,8 +85,8 @@
       if (selectedAnswer===correctOption){
       $('#responseBox').text("Correct.").css("border", "2px solid #00ff00");
       $('.next').fadeIn(1000);
-      score += 10;      
-      $("#scoreText").text("Score: " +score);      
+      score += 1;      
+      $("#scoreText").text("Score: " +score+"/"+ questions.length);      
       }
       if (selectedAnswer!==correctOption){
         $('#responseBox').text("Incorrect. The correct answer is :" +correctOption).css("border", "2px solid red");
