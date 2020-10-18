@@ -3,7 +3,8 @@
   let questionCounter = 0;
 
   //Reset question counter and score
-  function resetValues(){
+  function resetValues()
+  {
     questionCounter = 0;
     score = 0;
     $("#scoreText").text("Score: " +score);
@@ -34,7 +35,8 @@
    }
   
   //render the question and respective answers each time
-  function renderQuestionAndAnswers(question, answers){
+  function renderQuestionAndAnswers(question, answers)
+  {
      $('.headline').hide();
      $('.result-container').hide();
      $('.next').hide();
@@ -46,15 +48,17 @@
      });   
    }
   //render next question and answers
-  function renderNextQuestionAndAnswers(){
+  function renderNextQuestionAndAnswers()
+  {
       $('.questionForm').submit(function(e){
       e.preventDefault();    
       questionCounter++;
       if(questionCounter == questions.length)
       {
        alert("No more questions");
+       $(".result-container").modal({ fadeDuration: 100 }); 
+       $(".result-container p").append(`${score}`);                 
        resetValuesAndRenderQuestionsAndAnswers();
-
        init();
       }
       else
@@ -64,10 +68,11 @@
       }
       
      });      
-   }
+  }
 
   //check answers  
-  function checkAnswers(){
+  function checkAnswers()
+  {
     $("input[type='button']").click(function(){
       let selectedAnswer= $("input[name='answers']:checked").val();
       //console.log(selectedAnswer);
@@ -78,13 +83,13 @@
       let correctOption = questions[questionCounter].answers[questions[questionCounter].correctAnswer]
       if (selectedAnswer===correctOption){
       $('#responseBox').text("Correct.").css("border", "2px solid #00ff00");
-      $('.next').fadeIn(2000);
+      $('.next').fadeIn(1000);
       score += 10;      
       $("#scoreText").text("Score: " +score);      
       }
       if (selectedAnswer!==correctOption){
         $('#responseBox').text("Incorrect. The correct answer is :" +correctOption).css("border", "2px solid red");
-        $('.next').fadeIn(2000);             
+        $('.next').fadeIn(1000);             
       }  
       }        
     });        
@@ -101,14 +106,16 @@
     });
    }
   
-  function reStartQuiz(){
+  function reStartQuiz()
+   {
     $(".restartQuiz").click(()=>{
       resetValuesAndRenderQuestionsAndAnswers();
       init();
     });
    }
   
-  function resetValuesAndRenderQuestionsAndAnswers(){
+  function resetValuesAndRenderQuestionsAndAnswers()
+   {
       resetValues();
       renderQuestionAndAnswers(questions[questionCounter].question, questions[questionCounter].answers);   
 
@@ -123,7 +130,7 @@
     updateQuestionCount(1);
     checkAnswers();
     $(".next").hide();
-    }
+   }
   $(init);
   
   
