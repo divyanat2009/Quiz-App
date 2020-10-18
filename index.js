@@ -9,13 +9,13 @@
     score = 0;
     $("#scoreText").text("Score: " +score);
   }
-  
+  //Question Counter
   function updateQuestionCount(counter)
   {
     $("#progressText").html("Question "+counter +" of " +questions.length);
   }
   
-  // hide containers
+  // Hide containers
   function OnOffComponents(on)
    {
     if(!on)
@@ -34,7 +34,7 @@
     }
    }
   
-  //render the question and respective answers each time
+  //Render the question and respective answers each time
   function renderQuestionAndAnswers(question, answers)
   {
      $('.headline').hide();
@@ -47,11 +47,12 @@
      `<li><input type ="radio" value="${answer}" name="answers" class="choice-text"> ${answer}</li>`)
      });   
    }
-  //render next question and answers
+  //Render next question and answers, update total score
   function renderNextQuestionAndAnswers()
   {
       $('.questionForm').submit(function(e){
-      e.preventDefault();    
+      e.preventDefault();
+      $('#responseBox').hide();    
       questionCounter++;
       if(questionCounter == questions.length)
       {
@@ -70,12 +71,12 @@
      });      
   }
 
-  //check answers  
+  //Check options - correct, incorrect, no  selection made  
   function checkAnswers()
   {
     $("input[type='button']").click(function(){
       let selectedAnswer= $("input[name='answers']:checked").val();
-      //console.log(selectedAnswer);
+      $('#responseBox').show();
       if (!selectedAnswer){
         alert("Please select an option");
       }
@@ -105,7 +106,7 @@
       
     });
    }
-  
+  // Restart quiz
   function reStartQuiz()
    {
     $(".restartQuiz").click(()=>{
@@ -121,7 +122,7 @@
 
    }
   
-  //call all functions
+  //Call all functions
    function init()
    {
     startQuiz();
@@ -130,7 +131,7 @@
     updateQuestionCount(1);
     checkAnswers();
     $(".next").hide();
-   }
+    }
   $(init);
   
   
