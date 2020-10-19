@@ -60,7 +60,7 @@
        $(".result-container").modal({ fadeDuration: 100 }); 
        $(".result-container p").append(`${score}/${questions.length}`);                 
        resetValuesAndRenderQuestionsAndAnswers();
-       init();
+       reStartQuiz();
       }
       else
       {
